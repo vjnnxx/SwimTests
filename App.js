@@ -16,9 +16,30 @@ export default function App() {
   return (
     
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name= "Home" component={Home}/>
-        <Stack.Screen name= "Menu" component={Menu}/>
+      <Stack.Navigator 
+      initialRouteName = "Home"
+      screenOptions = {{
+        headerTitleAlign: 'center', 
+        headerTitleStyle: {
+            fontFamily: 'Roboto',
+            fontWeight: 'bold',
+        }}}>
+        <Stack.Screen 
+        name= "Home" 
+        component={Home}
+        options = {{
+          title: '',
+          headerShown: false,
+        }}
+        headerMode = 'none'
+        />
+        <Stack.Screen 
+        name= "Menu" 
+        component={Menu}
+        options={{
+          title: 'Testes', 
+        }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

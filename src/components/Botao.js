@@ -4,7 +4,9 @@ import {TouchableOpacity, StyleSheet, Text, View} from 'react-native';
 export default function Botao(props){
     return(
         <View>
-            <TouchableOpacity style={styles.botao} onPress={props.onPress}>
+            <TouchableOpacity style={styles.botao} 
+            onPress={props.onPress}
+            >
                 <Text style={styles.botao_texto}>
                     {props.value}
                 </Text>
@@ -22,6 +24,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop: 40
     },
     botao_texto: {
         color: '#FFFFFF',
