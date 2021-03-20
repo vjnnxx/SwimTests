@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {TouchableOpacity, StyleSheet, Text, View} from 'react-native';
 
 export default function Botao(props){
     return(
         <View>
-            <TouchableOpacity style={styles.botao}>
+            <TouchableOpacity style={styles.botao} onPress={props.onPress}>
                 <Text style={styles.botao_texto}>
-                    {props.name}
+                    {props.value}
                 </Text>
             </TouchableOpacity>
         </View>
