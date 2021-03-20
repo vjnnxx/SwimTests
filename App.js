@@ -6,7 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 //Importando componentes customizados
 import Home from './src/pages/Home';
 import Menu from './src/pages/Menu';
-
+import t30 from './src/pages/t30';
 //Criando a stack
 
 const Stack = createStackNavigator();
@@ -33,6 +33,7 @@ export default function App() {
         }}
         headerMode = 'none'
         />
+        
         <Stack.Screen 
         name= "Menu" 
         component={Menu}
@@ -40,6 +41,10 @@ export default function App() {
           title: 'Testes', 
         }}
         />
+        
+        <Stack.Screen name= "T30" component= {t30} />
+
+
       </Stack.Navigator>
     </NavigationContainer>
   );
