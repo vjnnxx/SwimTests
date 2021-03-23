@@ -1,6 +1,7 @@
 //Arquivo contendo estilos dos componentes do app
 import {StyleSheet} from 'react-native';
 
+// Configurações de estilo da página inicial
 const homeStyle = StyleSheet.create({
     container: {
       flex: 1,
@@ -21,6 +22,7 @@ const homeStyle = StyleSheet.create({
     }
 });
 
+// Configurações de estilo do menu
 const menuStyle= StyleSheet.create({
 
     subTitulo: {
@@ -32,4 +34,38 @@ const menuStyle= StyleSheet.create({
     }
 });
 
-export {homeStyle, menuStyle};
+// Configurações de estilo da página t30
+const pag01_Style= StyleSheet.create({
+  input: {
+    width: 300,
+    borderBottomWidth: 1,
+    marginTop: 50,
+  }
+});
+
+const images_Style = StyleSheet.create({
+  info: {
+    height: 35,
+    width: 35,
+    marginRight: 10,
+    
+  }
+});
+
+const botao_Styles = StyleSheet.create({
+  botao: {
+      backgroundColor: '#2E9BF5',
+      height: 50,
+      width: 300,
+      borderRadius: 8,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginTop: 40
+  },
+  botao_texto: {
+      color: '#FFFFFF',
+      fontFamily: 'Roboto',
+      fontSize: 20,
+  }
+});
+export {homeStyle, menuStyle, pag01_Style, images_Style, botao_Styles};

@@ -1,18 +1,28 @@
-import React from 'react';
-import { Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { Text, View, TextInput } from 'react-native';
 import Botao from '../components/Botao';
-import {homeStyle} from '../components/style';
+import {homeStyle, pag01_Style,menuStyle} from '../components/style';
 
 
-//Página inicial do aplicativo
-export default function Home( {navigation} ) {
+//Página do teste t30
+export default function T30() {
+  
   return (
    <View style={homeStyle.container}>
-      <Text style={homeStyle.tituloInicial}>CU PINTO MIJO BOSTA</Text>
+      <TextInput 
+      style= {pag01_Style.input}
+      autoFocus={true}
+      placeholder="Distância percorrida em metros"
+      keyboardType="numeric"
+      >
 
-      <Text style={homeStyle.textoInicial}> MEU OVO SUADO</Text>
+      </TextInput>
 
-      <Botao value="Começar" onPress= {() => navigation.navigate('Menu')}></Botao>
+      <Botao value="Calcular"></Botao>
+
+      <View>
+        
+      </View>
     </View>
     
   );
