@@ -1,9 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import {padrao, homeStyle} from '../components/style';
 
 export default function T30_info() {
   return (
-   <View style={homeStyle.container}>
+   <View style={padrao.container}>
       <Text style={homeStyle.tituloInicial}>O que é?</Text>
 
       <Text style={homeStyle.textoInicial}>

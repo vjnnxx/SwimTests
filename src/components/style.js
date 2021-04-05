@@ -1,14 +1,23 @@
 //Arquivo contendo estilos dos componentes do app
 import {StyleSheet} from 'react-native';
 
+const padrao = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+   
+  },
+  input: {
+    width: 300,
+    borderBottomWidth: 1,
+    marginTop: 50,
+  },
+});
+
 // Configurações de estilo da página inicial
 const homeStyle = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-     
-    },
+  
     tituloInicial: {
       marginTop: 100,
       marginBottom: 93,
@@ -36,12 +45,47 @@ const menuStyle= StyleSheet.create({
 
 // Configurações de estilo da página t30
 const pag01_Style= StyleSheet.create({
+
   input: {
     width: 300,
     borderBottomWidth: 1,
     marginTop: 50,
+  },
+
+  subTitulo: {
+    fontSize: 36, 
+    marginTop: 40,
+    textAlign: 'center',
+  },
+
+  texto: {
+    fontSize: 25,
+    marginTop: 30,
+    marginLeft: 30,
+    color: '#47525E',
+  },
+  
+  resultados: {
+    alignContent: 'flex-end',
   }
+
 });
+
+// Configurações de estilo da pagina de resultados do t30
+
+const t30_resultados = StyleSheet.create({
+  
+  texto: {
+    fontSize: 28,
+    marginTop: 10,
+  },
+
+  titulo: {
+    fontSize: 34,
+    marginTop: 50,
+    textAlign: 'center',
+  }
+})
 
 const images_Style = StyleSheet.create({
   info: {
@@ -68,4 +112,21 @@ const botao_Styles = StyleSheet.create({
       fontSize: 20,
   }
 });
-export {homeStyle, menuStyle, pag01_Style, images_Style, botao_Styles};
+
+// Configurações de estilo referentes a pagina multi testes
+
+const multi_testes = StyleSheet.create({
+  titulo: {
+    fontSize: 36, 
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+
+  texto: {
+    fontSize: 25,
+    marginTop: 30,
+    marginLeft: 30,
+    color: '#47525E',
+  }
+});
+export {homeStyle, menuStyle, pag01_Style, images_Style, botao_Styles, t30_resultados, padrao, multi_testes};
