@@ -4,7 +4,7 @@ import {botao_Styles} from './style';
 
 export default function Botao(props){
     return(
-        <View>
+        <View style={props.style}>
             <TouchableOpacity style={botao_Styles.botao} 
             onPress={props.onPress}
             >

@@ -10,7 +10,10 @@ import Icone_informacao from './src/components/info';
 import T30_info from './src/pages/T30_info';
 import t30_tr from './src/pages/t30_tr';
 import Icone_nado from './src/components/swim';
-import Multi_testes from './src/pages/multi_testes';
+import T400 from './src/pages/T400';
+import FMB from './src/pages/FMB';
+import Zonas from './src/pages/Zonas';
+import TesteDistancia from './src/pages/TesteDistancia';
 
 
 //Criando a stack
@@ -81,13 +84,27 @@ export default function App() {
         />
 
         <Stack.Screen
-        name = "Multi_testes"
-        component={Multi_testes}
+        name = "T400"
+        component={T400}
         options={{
-          title: 'Multi Testes',
+          title: 'T400',
           headerRight: () => <Icone_informacao></Icone_informacao>
         }}
         />
+
+      <Stack.Screen
+        name = "FMB"
+        component={FMB}
+        options={{
+          title: 'FMB',
+          headerRight: () => <Icone_informacao></Icone_informacao>
+        }}
+      />
+
+      <Stack.Screen
+        name="Zonas"
+        component={Zonas}
+      />
 
         
 

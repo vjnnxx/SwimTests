@@ -39,8 +39,13 @@ const menuStyle= StyleSheet.create({
         fontSize: 25,
         textAlign: 'center',
         marginTop: 30,
-        marginBottom: 30,
+        marginBottom: 50,
+    }, 
+
+    botao: {
+      marginBottom: 20
     }
+
 });
 
 // Configurações de estilo da página t30
@@ -113,13 +118,14 @@ const botao_Styles = StyleSheet.create({
   }
 });
 
-// Configurações de estilo referentes a pagina multi testes
+// Configurações de estilo referentes a pagina T400
 
-const multi_testes = StyleSheet.create({
+const t400 = StyleSheet.create({
   titulo: {
     fontSize: 36, 
     fontWeight: 'bold',
     textAlign: 'center',
+    marginTop: 50,
   },
 
   texto: {
@@ -127,6 +133,27 @@ const multi_testes = StyleSheet.create({
     marginTop: 30,
     marginLeft: 30,
     color: '#47525E',
-  }
+  },
+
 });
-export {homeStyle, menuStyle, pag01_Style, images_Style, botao_Styles, t30_resultados, padrao, multi_testes};
+
+// Configurações de estilo referentes a pagina FMB
+
+const fmb = StyleSheet.create({
+  titulo: {
+    fontSize: 30, 
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 50,
+  },
+
+  texto: {
+    fontSize: 18,
+    marginTop: 30,
+    marginLeft: 30,
+    color: '#47525E',
+  },
+
+});
+
+export {homeStyle, menuStyle, pag01_Style, images_Style, botao_Styles, t30_resultados, padrao, t400, fmb};

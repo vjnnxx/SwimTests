@@ -7,6 +7,7 @@ import {pag01_Style, padrao} from '../components/style';
 //Página do teste t30
 export default function T30( {navigation}) {
   
+  //Função de calcular a ser implementada
   const calcular = () =>{
     let arr = [120, 200]
     return arr;
