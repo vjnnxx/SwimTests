@@ -1,14 +1,23 @@
 //Arquivo contendo estilos dos componentes do app
 import {StyleSheet} from 'react-native';
 
+const padrao = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+   
+  },
+  input: {
+    width: 300,
+    borderBottomWidth: 1,
+    marginTop: 50,
+  },
+});
+
 // Configurações de estilo da página inicial
 const homeStyle = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-     
-    },
+  
     tituloInicial: {
       marginTop: 100,
       marginBottom: 93,
@@ -30,18 +39,58 @@ const menuStyle= StyleSheet.create({
         fontSize: 25,
         textAlign: 'center',
         marginTop: 30,
-        marginBottom: 30,
+        marginBottom: 50,
+    }, 
+
+    botao: {
+      marginBottom: 20
     }
+
 });
 
 // Configurações de estilo da página t30
 const pag01_Style= StyleSheet.create({
+
   input: {
     width: 300,
     borderBottomWidth: 1,
     marginTop: 50,
+  },
+
+  subTitulo: {
+    fontSize: 36, 
+    marginTop: 40,
+    textAlign: 'center',
+  },
+
+  texto: {
+    fontSize: 25,
+    marginTop: 30,
+    marginLeft: 30,
+    color: '#47525E',
+  },
+  
+  resultados: {
+    alignContent: 'flex-end',
   }
+
 });
+
+// Configurações de estilo da pagina de resultados do t30
+
+const t30_resultados = StyleSheet.create({
+  
+  texto: {
+    fontSize: 28,
+    marginTop: 10,
+  },
+
+  titulo: {
+    fontSize: 34,
+    marginTop: 50,
+    textAlign: 'center',
+  }
+})
 
 const images_Style = StyleSheet.create({
   info: {
@@ -68,4 +117,43 @@ const botao_Styles = StyleSheet.create({
       fontSize: 20,
   }
 });
-export {homeStyle, menuStyle, pag01_Style, images_Style, botao_Styles};
+
+// Configurações de estilo referentes a pagina T400
+
+const t400 = StyleSheet.create({
+  titulo: {
+    fontSize: 36, 
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 50,
+  },
+
+  texto: {
+    fontSize: 25,
+    marginTop: 30,
+    marginLeft: 30,
+    color: '#47525E',
+  },
+
+});
+
+// Configurações de estilo referentes a pagina FMB
+
+const fmb = StyleSheet.create({
+  titulo: {
+    fontSize: 30, 
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginTop: 50,
+  },
+
+  texto: {
+    fontSize: 18,
+    marginTop: 30,
+    marginLeft: 30,
+    color: '#47525E',
+  },
+
+});
+
+export {homeStyle, menuStyle, pag01_Style, images_Style, botao_Styles, t30_resultados, padrao, t400, fmb};

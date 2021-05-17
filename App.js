@@ -8,6 +8,12 @@ import Menu from './src/pages/Menu';
 import t30 from './src/pages/T30';
 import Icone_informacao from './src/components/info';
 import T30_info from './src/pages/T30_info';
+import t30_tr from './src/pages/t30_tr';
+import Icone_nado from './src/components/swim';
+import T400 from './src/pages/T400';
+import FMB from './src/pages/FMB';
+import Zonas from './src/pages/Zonas';
+import TesteDistancia from './src/pages/TesteDistancia';
 
 
 //Criando a stack
@@ -22,50 +28,83 @@ export default function App() {
 
     <NavigationContainer>
       <Stack.Navigator 
-      initialRouteName = "Home"
-      screenOptions = {{
-        headerTitleAlign: 'center', 
-        headerTitleStyle: {
-            fontFamily: 'Roboto',
-            fontWeight: 'bold',
-        }}}>
+        initialRouteName = "Home"
+        screenOptions = {{
+          headerTitleAlign: 'center', 
+          headerTitleStyle: {
+              fontFamily: 'Roboto',
+              fontWeight: 'bold',
+          }}}>
 
         {/*Screen referente a pagina inicial*/}
         <Stack.Screen 
-        name= "Home" 
-        component={Home}
-        options = {{
-          title: '',
-          headerShown: false,
-        }}
-        headerMode = 'none'
+          name= "Home" 
+          component={Home}
+          options = {{
+            title: '',
+            headerShown: false,
+          }}
+          headerMode = 'none'
         />
         
         {/*Screen referente ao menu*/}
         <Stack.Screen 
-        name= "Menu" 
-        component={Menu}
-        options={{
-          title: 'Testes', 
-        }}
+          name= "Menu" 
+          component={Menu}
+          options={{
+            title: 'Testes', 
+          }}
         />
         
-        {/*Screen referente a pagina t30*/}
+        {/*Screens referentes a pagina t30*/}
 
         <Stack.Screen
-        name= "T30_info"
-        component= {T30_info}
-        options ={{
-          title: 'Teste T30',
-        }}
-        >
-
-        </Stack.Screen>
-        <Stack.Screen 
-        name= "T30" 
-        component= {t30} 
-        options={{headerRight: () => <Icone_informacao></Icone_informacao>}}
+          name= "T30_info"
+          component= {T30_info}
+          options ={{
+            title: 'Teste T30',
+          }}
         />
+
+        <Stack.Screen 
+          name= "T30" 
+          component= {t30} 
+          options={{headerRight: () => <Icone_informacao></Icone_informacao>}}
+        />
+        
+
+        <Stack.Screen
+          name= "tempos_recomendados_t30"
+          component={t30_tr}
+          options={{
+            title: 'Teste T30',
+            headerRight: () => <Icone_nado></Icone_nado>
+          }
+        }
+        />
+
+        <Stack.Screen
+        name = "T400"
+        component={T400}
+        options={{
+          title: 'T400',
+          headerRight: () => <Icone_informacao></Icone_informacao>
+        }}
+        />
+
+      <Stack.Screen
+        name = "FMB"
+        component={FMB}
+        options={{
+          title: 'FMB',
+          headerRight: () => <Icone_informacao></Icone_informacao>
+        }}
+      />
+
+      <Stack.Screen
+        name="Zonas"
+        component={Zonas}
+      />
 
         
 

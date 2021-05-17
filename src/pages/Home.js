@@ -2,13 +2,13 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import Botao from '../components/Botao';
-import {homeStyle} from '../components/style';
+import {homeStyle, padrao} from '../components/style';
 
 
 //Página inicial do aplicativo
 export default function Home( {navigation} ) {
   return (
-   <View style={homeStyle.container}>
+   <View style={padrao.container}>
       <Text style={homeStyle.tituloInicial}>Swim Tests</Text>
 
       <Text style={homeStyle.textoInicial}>Bem vindo ao Swim Tests! 
