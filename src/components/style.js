@@ -13,6 +13,13 @@ const padrao = StyleSheet.create({
     borderBottomWidth: 1,
     marginTop: 50,
   },
+
+  subTitulo: {
+    fontSize: 34, 
+    textAlign: 'center'
+  }
+
+
 });
 
 // Configurações de estilo da página inicial
@@ -156,4 +163,36 @@ const fmb = StyleSheet.create({
 
 });
 
-export {homeStyle, menuStyle, pag01_Style, images_Style, botao_Styles, t30_resultados, padrao, t400, fmb};
+const resultados = StyleSheet.create({
+  texto: {
+    fontSize: 28,
+    marginTop: 10,
+  },
+
+  titulo: {
+    fontSize: 34,
+    marginTop: 50,
+    textAlign: 'center',
+  },
+
+  subTitulo: {
+    fontSize: 34, 
+    textAlign: 'left'
+  }
+});
+
+const anaeroStyle = StyleSheet.create({
+  subTitulo: {
+    color: '#47525E',
+    fontSize: 28,
+    textAlign: 'center',
+    marginTop: 10,
+    marginBottom: 10,
+  }, 
+
+  texto: {
+    fontSize: 16,
+  }
+});
+
+export {homeStyle, menuStyle, pag01_Style, images_Style, botao_Styles, t30_resultados, padrao, t400, fmb, resultados, anaeroStyle};
