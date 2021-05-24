@@ -14,6 +14,10 @@ import T400 from './src/pages/T400';
 import FMB from './src/pages/FMB';
 import Zonas from './src/pages/Zonas';
 import TesteDistancia from './src/pages/TesteDistancia';
+import IntensidadeAnaero from './src/pages/IntensidadeAnaero';
+import DistanciaResult from './src/pages/DistanciaResult';
+import AnaeroResult from './src/pages/AnaeroResult';
+
 
 
 //Criando a stack
@@ -104,6 +108,42 @@ export default function App() {
       <Stack.Screen
         name="Zonas"
         component={Zonas}
+      />
+
+
+      <Stack.Screen 
+        name = "Teste Distância" 
+        component={TesteDistancia}
+        options={{
+          title: 'Teste Distância',
+          headerRight: () => <Icone_informacao></Icone_informacao>
+        }}
+      />
+      <Stack.Screen 
+          name = "Intensidade Anaerobia" 
+          component={IntensidadeAnaero}
+          options={{
+            title: 'Intensidade Anaeróbia',
+            headerRight: () => <Icone_informacao></Icone_informacao>
+          }}
+      />
+
+      <Stack.Screen
+          name = "DistanciaResult"
+          component={DistanciaResult}
+          options={{
+            title: 'Teste Distância',
+            headerRight: () => <Icone_informacao></Icone_informacao>
+          }}
+      />
+
+      <Stack.Screen
+          name = "AnaeroResult"
+          component={AnaeroResult}
+          options={{
+            title: 'Teste Distância',
+            headerRight: () => <Icone_informacao></Icone_informacao>
+          }}
       />
 
         

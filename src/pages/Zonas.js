@@ -1,23 +1,28 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-
-import TesteDistancia from './TesteDistancia';
-import IntensidadeAnaero from './IntensidadeAnaero';
-
-const Tab = createBottomTabNavigator();
+import { View, Text } from 'react-native';
+import Botao from '../components/Botao';
+import {padrao, menuStyle} from '../components/style';
 
 export default function Zonas( {navigation} ) {
   return (
+    <View style={padrao.container}>
+
+      <Text style={menuStyle.subTitulo}> Selecione uma das seções</Text>
+
+      <Botao
+        value = "Teste Distância"
+        onPress = {()=> navigation.navigate('Teste Distância')}
+        style = {{marginTop: 50}}
+      />
+
+      <Botao
+        value = "Intensidade anaerobia"
+        onPress = {()=> navigation.navigate('Intensidade Anaerobia')}
+        style = {{marginTop: 70}}
+      />
+    </View>
     
-    <NavigationContainer
-      independent={true}
-    >
-        <Tab.Navigator
-        >
-            <Tab.Screen name = "Teste Distância" component={TesteDistancia}></Tab.Screen>
-            <Tab.Screen name = "Intensidade Anaeróbia" component={IntensidadeAnaero}></Tab.Screen>
-        </Tab.Navigator>
-    </NavigationContainer>
+
+    
   );
 }

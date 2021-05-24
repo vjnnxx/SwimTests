@@ -1,38 +1,47 @@
 import React, {useState} from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Keyboard} from 'react-native';
 import Botao from '../components/Botao';
 import RNPickerSelect from 'react-native-picker-select';
 import {menuStyle, padrao} from '../components/style';
-import { TextInput } from 'react-native-gesture-handler';
+import { TextInput} from 'react-native-gesture-handler';
 
 
 
 export default function TesteDistancia( {navigation} ) {
   
-  const [test, setTest] = useState('');
   
   return (
     <View style={padrao.container}>
         
+      <Text style={menuStyle.subTitulo}> Teste Distância</Text>
+
         <View style={{marginTop: 30}}>
+        
         <RNPickerSelect
-            style={{marginTop: 50}}
-            onValueChange={(value) => value}
-            items={[
-                { label: "3'50 - 4'40", value: 'e01' },
-                { label: "4'41 - 5'40", value: 'e02' },
-                { label: "5'41 - 6'40", value: 'e03' },
-                { label: "Maior que 6'41", value: 'e04' },
-            ]}
-        />
+                 onValueChange={(value) => console.log(value)}
+                 items={[
+                     { label: "JavaScript", value: "JavaScript" },
+                     { label: "TypeStript", value: "TypeStript" },
+                     { label: "Python", value: "Python" },
+                     { label: "Java", value: "Java" },
+                     { label: "C++", value: "C++" },
+                     { label: "C", value: "C" },
+                 ]}
+             />
 
         <TextInput 
-        placeholder="Tempo em 400m (em segundos)"
-        style={padrao.input}
+          placeholder="Tempo em 400m (em segundos)"
+          style={padrao.input}
+          keyboardType="numeric"
+          onBlur={Keyboard.dismiss()}
         >
         </TextInput>
 
-        <Botao value="Ver Resultados" style={{marginTop: 20}}></Botao>
+        <Botao 
+          value="Ver Resultados" 
+          style={{marginTop: 20}}
+          onPress={()=> navigation.navigate('DistanciaResult')}
+        ></Botao>
         </View>
         
         

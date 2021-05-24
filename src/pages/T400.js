@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, View, TextInput, Keyboard, TouchableOpacity} from 'react-native';
+import { Text, View, TextInput, Keyboard} from 'react-native';
 import Botao from '../components/Botao';
 import {padrao, t400} from '../components/style';
 
