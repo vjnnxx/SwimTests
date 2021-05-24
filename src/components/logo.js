@@ -1,11 +1,11 @@
 import React from 'react';
-import {Image, TouchableOpacity} from 'react-native';
+import {Image} from 'react-native';
 import {images_Style} from '../components/style';
 
-export default function Icone_nado(){
+export default function Logo(){
     return(
         <Image
-        source={require('../../assets/swim.png')}
+        source={require('../../assets/perfil.png')}
         style={images_Style.info}
         > 
         </Image>

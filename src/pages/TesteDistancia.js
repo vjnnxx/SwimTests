@@ -18,15 +18,14 @@ export default function TesteDistancia( {navigation} ) {
         <View style={{marginTop: 30}}>
         
         <RNPickerSelect
-                 onValueChange={(value) => console.log(value)}
-                 items={[
-                     { label: "JavaScript", value: "JavaScript" },
-                     { label: "TypeStript", value: "TypeStript" },
-                     { label: "Python", value: "Python" },
-                     { label: "Java", value: "Java" },
-                     { label: "C++", value: "C++" },
-                     { label: "C", value: "C" },
-                 ]}
+                placeholder= {{label: "Selecione o teste desejado"}}
+                onValueChange={(value) => console.log(value)}
+                items={[
+                    { label: "3'50 - 4'40", value: "op01" },
+                    { label: "4'41 - 5'40", value: "op02" },
+                    { label: "5'41 - 6'40", value: "op03" },
+                    { label: "Maior que 6'41", value: "op04" },
+                ]}
              />
 
         <TextInput 
