@@ -9,6 +9,13 @@ export default function T30( {navigation}) {
   
   //Função para calcular o tempo e a velocidade media
   const calcular = (metros) =>{
+    
+    metros = Number(metros);
+
+    if(metros == NaN) {
+      return '';
+    }
+
     let velMedia = Number(metros)/1800;
     let tempo = 100/velMedia;
     let tempoSeg = tempo;
@@ -49,12 +56,12 @@ export default function T30( {navigation}) {
       <Botao 
       value="Calcular"
       onPress = {() =>{
-        if(num <= 0 || num == ''){
+        if(num <= 0 || num == '' || num.startsWith('.') || num.startsWith(',') || num.startsWith('-')){
           Alert.alert("Ops!","O campo deve ser preenchido com um valor maior que zero!");
         } else {
-          setResult(calcular(num));
-          Keyboard.dismiss();
+            setResult(calcular(num));
         }
+        Keyboard.dismiss();
         
       } } 
       ></Botao>

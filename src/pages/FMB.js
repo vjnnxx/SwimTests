@@ -15,8 +15,19 @@ export default function FMB( {navigation, route}) {
         let fmb = 60/medCiclo;
         let cmb = (velMedia/fmb)*60;
         let indiceNado = cmb*velMedia;
+
+        //Separa minutos e segundos se necessário
+        let medText;
+        if(medCiclo % 60 != 0){
+            var segundos = medCiclo % 60;
+            medCiclo = medCiclo/60;
+            medText = Math.floor(medCiclo) + "'" + Math.floor(segundos) + "''";
+        } else {
+            medCiclo = medCiclo/60;
+            medText = medCiclo + "'";
+        }
         
-        let arr = [medCiclo, fmb, cmb, indiceNado];
+        let arr = [medText, fmb.toFixed(2), cmb.toFixed(2), indiceNado.toFixed(2)];
         return arr;
     }
     
