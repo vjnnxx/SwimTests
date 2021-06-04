@@ -9,9 +9,11 @@ import {homeStyle, padrao} from '../components/style';
 export default function Home( {navigation} ) {
   return (
    <View style={padrao.container}>
-      <Text style={homeStyle.tituloInicial}>Swim Tests</Text>
+      
 
-      <Text style={homeStyle.textoInicial}>Bem vindo ao Swim Tests! 
+      <Text style={homeStyle.textoInicial}>Bem vindo ao Swim Assessment!</Text> 
+
+      <Text style={homeStyle.textoInicial02}>
       É um prazer ajudar atletas e professores a alcançar seus objetivos.
       Clique no botão abaixo para começar.</Text>
 

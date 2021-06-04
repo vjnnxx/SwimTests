@@ -33,7 +33,14 @@ const homeStyle = StyleSheet.create({
     textoInicial: {
       fontSize: 25, 
       textAlign: 'center',
-      marginBottom: 80,
+      marginTop: 100,
+  
+    },
+
+    textoInicial02: {
+      fontSize: 25, 
+      textAlign: 'center',
+      marginBottom: 60,
   
     }
 });

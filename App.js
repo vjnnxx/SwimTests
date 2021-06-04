@@ -6,10 +6,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from './src/pages/Home';
 import Menu from './src/pages/Menu';
 import t30 from './src/pages/T30';
-import Icone_informacao from './src/components/info';
 import T30_info from './src/pages/T30_info';
 import t30_tr from './src/pages/t30_tr';
-import Icone_nado from './src/components/swim';
 import T400 from './src/pages/T400';
 import FMB from './src/pages/FMB';
 import Zonas from './src/pages/Zonas';
@@ -17,6 +15,7 @@ import TesteDistancia from './src/pages/TesteDistancia';
 import IntensidadeAnaero from './src/pages/IntensidadeAnaero';
 import DistanciaResult from './src/pages/DistanciaResult';
 import AnaeroResult from './src/pages/AnaeroResult';
+import Logo from './src/components/logo';
 
 
 
@@ -25,7 +24,7 @@ const Stack = createStackNavigator();
 
 
 //Página inicial do aplicativo
-export default function App() {
+export default function App( {navigation}) {
 
   return (
     
@@ -45,8 +44,9 @@ export default function App() {
           name= "Home" 
           component={Home}
           options = {{
-            title: '',
-            headerShown: false,
+            title: 'Swim Assessment',
+            //headerShown: false,
+            headerRight: () => <Logo/>
           }}
           headerMode = 'none'
         />
@@ -56,7 +56,8 @@ export default function App() {
           name= "Menu" 
           component={Menu}
           options={{
-            title: 'Testes', 
+            title: 'Testes',
+            headerRight: () => <Logo/> 
           }}
         />
         
@@ -73,7 +74,7 @@ export default function App() {
         <Stack.Screen 
           name= "T30" 
           component= {t30} 
-          options={{headerRight: () => <Icone_informacao></Icone_informacao>}}
+          options={{headerRight: () => <Logo/>}}
         />
         
 
@@ -82,7 +83,7 @@ export default function App() {
           component={t30_tr}
           options={{
             title: 'Teste T30',
-            headerRight: () => <Icone_nado></Icone_nado>
+            headerRight: () => <Logo/>
           }
         }
         />
@@ -92,7 +93,7 @@ export default function App() {
         component={T400}
         options={{
           title: 'T400',
-          headerRight: () => <Icone_informacao></Icone_informacao>
+          headerRight: () => <Logo/>
         }}
         />
 
@@ -101,13 +102,16 @@ export default function App() {
         component={FMB}
         options={{
           title: 'FMB',
-          headerRight: () => <Icone_informacao></Icone_informacao>
+          headerRight: () => <Logo/>
         }}
       />
 
       <Stack.Screen
         name="Zonas"
         component={Zonas}
+        options = {{
+          headerRight: () => <Logo/>
+        }}
       />
 
 
@@ -116,7 +120,7 @@ export default function App() {
         component={TesteDistancia}
         options={{
           title: 'Teste Distância',
-          headerRight: () => <Icone_informacao></Icone_informacao>
+          headerRight: () => <Logo/>
         }}
       />
       <Stack.Screen 
@@ -124,7 +128,7 @@ export default function App() {
           component={IntensidadeAnaero}
           options={{
             title: 'Intensidade Anaeróbia',
-            headerRight: () => <Icone_informacao></Icone_informacao>
+            headerRight: () => <Logo/>
           }}
       />
 
@@ -133,7 +137,7 @@ export default function App() {
           component={DistanciaResult}
           options={{
             title: 'Teste Distância',
-            headerRight: () => <Icone_informacao></Icone_informacao>
+            headerRight: () => <Logo/>
           }}
       />
 
@@ -141,8 +145,8 @@ export default function App() {
           name = "AnaeroResult"
           component={AnaeroResult}
           options={{
-            title: 'Teste Distância',
-            headerRight: () => <Icone_informacao></Icone_informacao>
+            title: 'Intensidade Anaeróbia',
+            headerRight: () => <Logo/>
           }}
       />
 

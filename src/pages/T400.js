@@ -1,24 +1,32 @@
 import React, {useState} from 'react';
-import { Text, View, TextInput, Keyboard} from 'react-native';
+import { Text, View, TextInput, Keyboard, Alert} from 'react-native';
 import Botao from '../components/Botao';
 import {padrao, t400} from '../components/style';
 
 
 
-//Página de multi testes
+//Página do T400
 export default function T400( {navigation}) {
 
-    const [testes, setTestes] = useState(['T50', 'T100', 'T200', 'T400']);
-    const [testeEscolhido, setTesteEscolhido] = useState([]);
+    
+    //Função que calcula a velocidade media
+    const calcular = (tempo) =>{
 
-    //Função de calcular a ser implementada
-    const calcular = () =>{
-        let arr = [120, 200]
+        tempo = Number(tempo);
+
+        if(tempo == NaN){
+            return '';
+        }
+
+        let velMedia = 400/tempo;
+        let velText = velMedia.toFixed(2) + "m/s";
+        let arr = [velText, velMedia];
         return arr;
-      }
-    
-      const [result, setResult] = useState('');
-    
+    }
+
+    const [result, setResult] = useState('');
+    const [num, setNum] = useState('');
+
     return (
     <View 
     style={padrao.container}>
@@ -28,13 +36,20 @@ export default function T400( {navigation}) {
             style={padrao.input}
             placeholder="Tempo em 400m (em segundos)"
             keyboardType="numeric"
-            onBlur={Keyboard.dismiss()}
-            autoFocus={true}
+            onChangeText= {(num) => setNum(num)}
+            defaultValue = {num}
         />
         
         <Botao 
         value="Calcular" 
-        onPress={result => setResult(calcular())}
+        onPress={() => {
+            if(num <= 0 || num == '' || num.startsWith('.') || num.startsWith(',') || num.startsWith('-')){
+                Alert.alert("Ops!","O campo deve ser preenchido com um valor maior que zero!");
+            } else {
+                setResult(calcular(num));
+            }
+            Keyboard.dismiss();
+        } }
         >
         
         </Botao>
@@ -44,7 +59,13 @@ export default function T400( {navigation}) {
             <Text style={t400.texto}> Velocidade média: {result[0]} </Text>
             <Botao 
                 value="Calcular FMB"
-                onPress={()=> navigation.navigate('FMB')}
+                onPress={()=> { 
+                    if(result == ''){
+                        Alert.alert("Ops!","É preciso calcular a velocidade média antes de proseguir!");
+                    } else {
+                        navigation.navigate('tempos_recomendados_t30', {tempo : result[1]});
+                    }}
+                }
             ></Botao>
         </View>
     </View>
