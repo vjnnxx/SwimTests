@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Text, View, TextInput, Alert, Keyboard} from 'react-native';
 import Botao from '../components/Botao';
 import {pag01_Style, padrao} from '../components/style';
+import {convertTime} from '../utils/convertTime';
 
 
 //Página do teste t30
@@ -19,17 +20,7 @@ export default function T30( {navigation}) {
     let velMedia = Number(metros)/1800;
     let tempo = 100/velMedia;
     let tempoSeg = tempo;
-    let tempoText;
-
-    //Separa minutos e segundos se necessário
-    if(tempo % 60 != 0){
-      var segundos = tempo % 60;
-      tempo = tempo/60;
-      tempoText = Math.floor(tempo) + "'" + Math.floor(segundos) + "''";
-    } else {
-      tempo = tempo/60;
-      tempoText = tempo + "'";
-    }
+    let tempoText = convertTime(tempo);
 
     let velText = velMedia.toFixed(2) + " m/s";
     let arr = [velText, tempoText, tempoSeg];
@@ -56,12 +47,13 @@ export default function T30( {navigation}) {
       <Botao 
       value="Calcular"
       onPress = {() =>{
-        if(num <= 0 || num == '' || num.startsWith('.') || num.startsWith(',') || num.startsWith('-')){
-          Alert.alert("Ops!","O campo deve ser preenchido com um valor maior que zero!");
+        if(num <= 0 || num == '' || num.startsWith('.') || num.startsWith(',') || num.startsWith('-') || /\-/.test(num) || /\,/.test(num)){
+          Alert.alert("Ops!","O campo deve ser preenchido com um valor válido maior que zero!");
         } else {
             setResult(calcular(num));
+            Keyboard.dismiss();
         }
-        Keyboard.dismiss();
+        
         
       } } 
       ></Botao>

@@ -1,34 +1,19 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import {t30_resultados, padrao} from '../components/style';
+import {convertTime} from '../utils/convertTime';
 
 
 //Página inicial do aplicativo
 export default function t30_tr({route}) {
 
-  const calcTempo = (tempo) => {
-    //Separa minutos e segundos se necessário
-
-    let tempoText;
-
-    if(tempo % 60 != 0){
-      var segundos = tempo % 60;
-      tempo = tempo/60;
-      tempoText = Math.floor(tempo) + "'" + Math.floor(segundos) + "''";
-    } else {
-      tempo = tempo/60;
-      tempoText = tempo + "'";
-    }
-
-    return tempoText;
-  }
 
   var tempo = route.params.tempo;
-  let tempo50 = calcTempo((tempo/2) - 1);
-  let tempo100= calcTempo(tempo - 1.5);
-  let tempo200 = calcTempo((tempo*2) - 2);
-  let tempo300 = calcTempo(tempo*3);
-  let tempo400 = calcTempo(tempo*4); 
+  let tempo50 = convertTime((tempo/2) - 1);
+  let tempo100= convertTime(tempo - 1.5);
+  let tempo200 = convertTime((tempo*2) - 2);
+  let tempo300 = convertTime(tempo*3);
+  let tempo400 = convertTime(tempo*4); 
 
   return (
    <View style={padrao.container}>
