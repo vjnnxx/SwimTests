@@ -74,7 +74,6 @@ export default function AnaeroResult( {navigation, route} ) {
               <Text style={anaeroStyle.texto}>Tempo estimado: {an3[1]}</Text>
               <Text style={anaeroStyle.texto}>Tempo: {an3[2]}</Text>
               <Text style={anaeroStyle.texto}>Velocidade média: {an3[3]} </Text>
-
         </View>
     </ScrollView>
     

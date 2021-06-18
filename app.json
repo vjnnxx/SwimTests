@@ -4,9 +4,9 @@
     "slug": "SwimTests",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/icone.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash-swim.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -21,7 +21,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icone-adapt.png",
         "backgroundColor": "#FFFFFF"
       }
     },
