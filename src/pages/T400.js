@@ -43,8 +43,8 @@ export default function T400( {navigation}) {
         <Botao 
         value="Calcular" 
         onPress={() => {
-            if(num <= 0 || num == '' || num.startsWith('.') || num.startsWith(',') || num.startsWith('-')){
-                Alert.alert("Ops!","O campo deve ser preenchido com um valor maior que zero!");
+            if(num <= 0 || num == '' || num.startsWith('.') || num.startsWith(',') || num.startsWith('-') || /\-/.test(num) || /\,/.test(num)){
+                Alert.alert("Ops!","O campo deve ser preenchido com um valor válido maior que zero!");
             } else {
                 setResult(calcular(num));
             }
@@ -63,7 +63,7 @@ export default function T400( {navigation}) {
                     if(result == ''){
                         Alert.alert("Ops!","É preciso calcular a velocidade média antes de proseguir!");
                     } else {
-                        navigation.navigate('tempos_recomendados_t30', {tempo : result[1]});
+                        navigation.navigate('FMB', {velMedia: result[1]});
                     }}
                 }
             ></Botao>

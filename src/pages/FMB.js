@@ -49,7 +49,14 @@ export default function FMB( {navigation, route}) {
         
         <Botao 
         value="Calcular" 
-        onPress={() => setResult(calcular(num))}
+        onPress={() => {
+            if(num <= 0 || num == '' || num.startsWith('.') || num.startsWith(',') || num.startsWith('-') || /\-/.test(num) || /\,/.test(num)){
+                Alert.alert("Ops!","O campo deve ser preenchido com um valor maior que zero!");
+            } else {
+                setResult(calcular(num));
+                Keyboard.dismiss();
+            }
+        }}
         >
         
         </Botao>

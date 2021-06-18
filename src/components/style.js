@@ -185,7 +185,19 @@ const resultados = StyleSheet.create({
   subTitulo: {
     fontSize: 34, 
     textAlign: 'left'
-  }
+  },
+
+  distTitulo: {
+    fontSize: 30,
+    marginTop: 30,
+    textAlign: 'center',
+  },
+
+  distTexto: {
+    fontSize: 28,
+    marginTop: 10,
+    marginBottom: 20
+  },
 });
 
 const anaeroStyle = StyleSheet.create({
