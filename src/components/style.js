@@ -57,7 +57,8 @@ const menuStyle= StyleSheet.create({
     }, 
 
     botao: {
-      marginBottom: 20
+      marginBottom: 60,
+      marginTop: 15,
     }
 
 });

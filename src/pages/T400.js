@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Text, View, TextInput, Keyboard, Alert} from 'react-native';
 import Botao from '../components/Botao';
+import {convertTime} from '../utils/convertTime';
 import {padrao, t400} from '../components/style';
 
 
@@ -9,7 +10,7 @@ import {padrao, t400} from '../components/style';
 export default function T400( {navigation}) {
 
     
-    //Função que calcula a velocidade media
+    //Função que calcula a velocidade e o tempo médio
     const calcular = (tempo) =>{
 
         tempo = Number(tempo);
@@ -20,7 +21,10 @@ export default function T400( {navigation}) {
 
         let velMedia = 400/tempo;
         let velText = velMedia.toFixed(2) + "m/s";
-        let arr = [velText, velMedia];
+
+        let tempoMed = 400/velMedia;
+        let tempoText = convertTime(tempoMed); 
+        let arr = [velText, velMedia, tempoText];
         return arr;
     }
 
@@ -57,14 +61,12 @@ export default function T400( {navigation}) {
         <View style={{marginTop: 30, alignItems: 'center'}}>
             <Text style={t400.titulo}> Resultado</Text>
             <Text style={t400.texto}> Velocidade média: {result[0]} </Text>
+            <Text style={t400.texto}> Tempo médio: {result[2]} </Text>
             <Botao 
-                value="Calcular FMB"
+                value="Det. das zonas de treinamento"
                 onPress={()=> { 
-                    if(result == ''){
-                        Alert.alert("Ops!","É preciso calcular a velocidade média antes de proseguir!");
-                    } else {
-                        navigation.navigate('FMB', {velMedia: result[1]});
-                    }}
+                    navigation.navigate('Zonas');
+                 }
                 }
             ></Botao>
         </View>
