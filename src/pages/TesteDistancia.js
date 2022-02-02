@@ -16,11 +16,12 @@ export default function TesteDistancia( {navigation} ) {
   return (
     <View style={padrao.container}>
         
-      <Text style={menuStyle.subTitulo}> Teste Distância</Text>
+      <Text style={menuStyle.subTitulo}> Selecione faixa de tempo do T400</Text>
 
         <View style={{marginTop: 30}}>
         
         <RNPickerSelect
+                useNativeAndroidPickerStyle = {false}
                 placeholder= {{label: "Selecione o teste desejado"}}
                 onValueChange={(value) => setVal(value)}
                 items={[
@@ -32,7 +33,7 @@ export default function TesteDistancia( {navigation} ) {
              />
 
         <TextInput 
-          placeholder="Tempo em 400m (em segundos)"
+          placeholder="Tempo nos 400m (em segundos)"
           style={padrao.input}
           keyboardType="numeric"
           onChangeText= {(num) => setNum(num)}

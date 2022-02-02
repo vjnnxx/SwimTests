@@ -34,7 +34,7 @@ export default function T400( {navigation}) {
 
         <TextInput
             style={padrao.input}
-            placeholder="Tempo em 400m (em segundos)"
+            placeholder="Tempo nos 400m (em segundos)"
             keyboardType="numeric"
             onChangeText= {(num) => setNum(num)}
             defaultValue = {num}

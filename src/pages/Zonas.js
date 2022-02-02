@@ -10,7 +10,7 @@ export default function Zonas( {navigation} ) {
       <Text style={menuStyle.subTitulo}> Selecione uma das seções</Text>
 
       <Botao
-        value = "Teste Distância"
+        value = "Selecione faixa de tempo do T400"
         onPress = {()=> navigation.navigate('Teste Distância')}
         style = {{marginTop: 50}}
       />

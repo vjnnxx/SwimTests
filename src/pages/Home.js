@@ -11,11 +11,10 @@ export default function Home( {navigation} ) {
    <View style={padrao.container}>
       
 
-      <Text style={homeStyle.textoInicial}>Bem vindo ao Swim Assessment!</Text> 
+      <Text style={homeStyle.textoInicial}>Bem vindo(a) a Swim Assessment!</Text> 
 
       <Text style={homeStyle.textoInicial02}>
-      É um prazer ajudar atletas e professores a alcançar seus objetivos.
-      Clique no botão abaixo para começar.</Text>
+      É um prazer ajudar atletas, professores e técnicos de natação a alcançarem seus objetivos</Text>
 
       <Botao value="Começar" onPress= {() => navigation.navigate('Menu')}></Botao>
     </View>

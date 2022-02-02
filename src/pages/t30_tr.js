@@ -17,7 +17,7 @@ export default function t30_tr({route}) {
 
   return (
    <View style={padrao.container}>
-      <Text style={t30_resultados.titulo}>Tempo recomendado p/ se trabalhar no limiar</Text>
+      <Text style={t30_resultados.titulo}>Tempo recomendado para séries (tiros) na intensidade do limiar anaeróbio</Text>
       <View style={{marginTop: 20}}> 
         <Text style={t30_resultados.texto}> 50 metros:  {tempo50}</Text>
         <Text style={t30_resultados.texto}> 100 metros: {tempo100}</Text>

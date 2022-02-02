@@ -5,7 +5,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 //Importando componentes customizados
 import Home from './src/pages/Home';
 import Menu from './src/pages/Menu';
-import t30 from './src/pages/T30';
+import t30 from './src/pages/t30';
 import T30_info from './src/pages/T30_info';
 import t30_tr from './src/pages/t30_tr';
 import T400 from './src/pages/T400';
@@ -119,7 +119,7 @@ export default function App( {navigation}) {
         name = "Teste Distância" 
         component={TesteDistancia}
         options={{
-          title: 'Teste Distância',
+          title: '',
           headerRight: () => <Logo/>
         }}
       />
@@ -136,7 +136,7 @@ export default function App( {navigation}) {
           name = "DistanciaResult"
           component={DistanciaResult}
           options={{
-            title: 'Teste Distância',
+            title: 'Resultados',
             headerRight: () => <Logo/>
           }}
       />
